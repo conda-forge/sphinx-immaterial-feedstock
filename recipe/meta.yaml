@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ dunder_name }}/{{ dunder_name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ dunder_name }}/{{ dunder_name }}-{{ version }}.tar.gz
   sha256: 3b2128114040e96539cf4eaaa924b80bf4944af363e4e9954a6290fa7549aeaa
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - setuptools
-    - python >=3.8,<4
+    - python {{ python_min }}
     - nodejs >=16
   run:
-    - python >=3.8,<4
+    - python >={{ python_min }},<4
     - sphinx >=4.5
     - markupsafe
     - pydantic >=2.4
@@ -32,6 +32,8 @@ requirements:
     - requests
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - sphinx_immaterial
 
