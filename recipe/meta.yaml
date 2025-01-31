@@ -1,6 +1,6 @@
 {% set name = "sphinx-immaterial" %}
 {% set dunder_name = name.replace("-", "_") %}
-{% set version = "0.12.4" %}
+{% set version = "0.12.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ dunder_name }}/{{ dunder_name }}-{{ version }}.tar.gz
-  sha256: 3b2128114040e96539cf4eaaa924b80bf4944af363e4e9954a6290fa7549aeaa
+  sha256: a7c0c4be3dcb4960eb7b299dfee07cdf8a02bf56821f5d0d62e5d31b7b7b5ec5
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
