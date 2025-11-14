@@ -2,21 +2,20 @@ schema_version: 1
 
 context:
   name: sphinx-immaterial
-  dunder_name: ${{ name | replace("-", "_") }}
-  version: 0.12.5
+  version: "0.13.8"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ dunder_name }}/${{ dunder_name }}-${{ version }}.tar.gz
-  sha256: a7c0c4be3dcb4960eb7b299dfee07cdf8a02bf56821f5d0d62e5d31b7b7b5ec5
+  url: https://github.com/jbms/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: c608559df27df391b045dee2e6bcf60cccdcfc993087715431ea32a13053755b
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
@@ -39,10 +38,13 @@ tests:
       imports:
         - sphinx_immaterial
       python_version: ${{ python_min }}.*
+
 about:
   license: MIT
   license_file: LICENSE
   summary: Sphinx-Immaterial Theme
+  description: |
+    Adaptation of the popular mkdocs-material material design theme to the sphinx documentation system
   homepage: https://github.com/jbms/sphinx-immaterial
   repository: https://github.com/jbms/sphinx-immaterial
   documentation: https://sphinx-immaterial.readthedocs.io/
