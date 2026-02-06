@@ -13,6 +13,8 @@ Development: https://github.com/jbms/sphinx-immaterial
 
 Documentation: https://sphinx-immaterial.readthedocs.io/
 
+Adaptation of the popular mkdocs-material material design theme to the sphinx documentation system
+
 Current build status
 ====================
 
@@ -147,5 +149,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@munechika-koyo](https://github.com/munechika-koyo/)
 * [@sdebionne](https://github.com/sdebionne/)
 
