@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: sphinx-immaterial
-  version: "0.13.10"
+  version: "0.13.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/jbms/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: d6c78dc3a5cd3dd5a1743e44a77b1617a49dd6e8deab307cbe8d465228505289
+  sha256: 8b850c42e732487054d53889908d86393818db60eed7aea6666125c9228dc80d
 
 build:
   number: 0
